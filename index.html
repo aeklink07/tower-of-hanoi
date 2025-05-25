@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Tower of Hanoi</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon.svg">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 data-i18n="title">Tower of Hanoi</h1>
+                <p class="subtitle" data-i18n="subtitle">Classic puzzle game</p>
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                        <option value="it">Italiano</option>
+                        <option value="ru">Русский</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-info">
+            <div class="info-card">
+                <i class="fas fa-bullseye"></i>
+                <span data-i18n="moves">Moves</span>
+                <span id="moveCount">0</span>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <span data-i18n="time">Time</span>
+                <span id="timeCount">00:00</span>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-compact-disc"></i>
+                <span data-i18n="disks">Disks</span>
+                <span id="diskCount">3</span>
+            </div>
+        </div>
+
+        <div class="settings-panel">
+            <div class="difficulty-selector">
+                <label data-i18n="selectDifficulty">Difficulty:</label>
+                <select id="difficultySelect">
+                    <option value="3" data-i18n="easy">Easy (3 disks)</option>
+                    <option value="4" data-i18n="medium">Medium (4 disks)</option>
+                    <option value="5" data-i18n="hard">Hard (5 disks)</option>
+                    <option value="6" data-i18n="expert">Expert (6 disks)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="game-board">
+                <div class="base"></div>
+                <div class="pegs-container">
+                    <div class="peg-wrapper">
+                        <div class="peg" data-peg="0"></div>
+                        <div class="peg-label" data-i18n="peg">Peg</div>
+                    </div>
+                    <div class="peg-wrapper">
+                        <div class="peg" data-peg="1"></div>
+                        <div class="peg-label" data-i18n="peg">Peg</div>
+                    </div>
+                    <div class="peg-wrapper">
+                        <div class="peg" data-peg="2"></div>
+                        <div class="peg-label" data-i18n="peg">Peg</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="newGameBtn" class="btn btn-primary">
+                <i class="fas fa-play"></i>
+                <span data-i18n="newGame">New Game</span>
+            </button>
+            <button id="resetBtn" class="btn btn-secondary">
+                <i class="fas fa-redo"></i>
+                <span data-i18n="resetGame">Reset</span>
+            </button>
+            <button id="hintBtn" class="btn btn-info">
+                <i class="fas fa-lightbulb"></i>
+                <span data-i18n="hint">Hint</span>
+            </button>
+            <button id="undoBtn" class="btn btn-warning">
+                <i class="fas fa-undo"></i>
+                <span data-i18n="undo">Undo</span>
+            </button>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <div class="instructions-card">
+            <h3 data-i18n="instructions">Instructions</h3>
+            <p data-i18n="instructionsText">Move all disks from the left peg to the right peg. You can only move one disk at a time and never place a larger disk on top of a smaller one.</p>
+        </div>
+
+        <div id="winModal" class="modal">
+            <div class="modal-content">
+                <h2 data-i18n="congratulations">Congratulations!</h2>
+                <p id="winText"></p>
+                <button id="playAgainBtn" class="btn btn-primary" data-i18n="newGame">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/game.js"></script>
+</body>
+</html>
