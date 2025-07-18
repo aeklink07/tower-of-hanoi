@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Tower of Hanoi</title>
+    <title data-i18n="title">Web Tools Collection</title>
     
     <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.svg">
@@ -19,8 +19,8 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1 data-i18n="title">Tower of Hanoi</h1>
-                <p class="subtitle" data-i18n="subtitle">Classic puzzle game</p>
+                <h1 data-i18n="title">Web Tools Collection</h1>
+                <p class="subtitle" data-i18n="subtitle">Useful online tools for developers and users</p>
                 <div class="language-selector">
                     <i class="fas fa-globe"></i>
                     <select id="languageSelect">
@@ -36,93 +36,106 @@
             </div>
         </header>
 
-        <div class="game-info">
-            <div class="info-card">
-                <i class="fas fa-bullseye"></i>
-                <span data-i18n="moves">Moves</span>
-                <span id="moveCount">0</span>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-clock"></i>
-                <span data-i18n="time">Time</span>
-                <span id="timeCount">00:00</span>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-compact-disc"></i>
-                <span data-i18n="disks">Disks</span>
-                <span id="diskCount">3</span>
-            </div>
-        </div>
-
-        <div class="settings-panel">
-            <div class="difficulty-selector">
-                <label data-i18n="selectDifficulty">Difficulty:</label>
-                <select id="difficultySelect">
-                    <option value="3" data-i18n="easy">Easy (3 disks)</option>
-                    <option value="4" data-i18n="medium">Medium (4 disks)</option>
-                    <option value="5" data-i18n="hard">Hard (5 disks)</option>
-                    <option value="6" data-i18n="expert">Expert (6 disks)</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="game-container">
-            <div class="game-board">
-                <div class="base"></div>
-                <div class="pegs-container">
-                    <div class="peg-wrapper">
-                        <div class="peg" data-peg="0"></div>
-                        <div class="peg-label" data-i18n="peg">Peg</div>
+        <div class="tools-container">
+            <div class="tools-grid">
+                <div class="tool-card" data-tool="color-picker">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <div class="peg-wrapper">
-                        <div class="peg" data-peg="1"></div>
-                        <div class="peg-label" data-i18n="peg">Peg</div>
+                    <h3 data-i18n="colorPicker">Color Picker</h3>
+                    <p data-i18n="colorPickerDesc">Pick colors and get RGB, HEX, HSL codes</p>
+                </div>
+                
+                <div class="tool-card" data-tool="text-counter">
+                    <div class="tool-icon">
+                        <i class="fas fa-calculator"></i>
                     </div>
-                    <div class="peg-wrapper">
-                        <div class="peg" data-peg="2"></div>
-                        <div class="peg-label" data-i18n="peg">Peg</div>
+                    <h3 data-i18n="textCounter">Text Counter</h3>
+                    <p data-i18n="textCounterDesc">Count characters, words, and lines</p>
+                </div>
+                
+                <div class="tool-card" data-tool="qr-generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-qrcode"></i>
                     </div>
+                    <h3 data-i18n="qrGenerator">QR Code Generator</h3>
+                    <p data-i18n="qrGeneratorDesc">Generate QR codes for text and URLs</p>
+                </div>
+                
+                <div class="tool-card" data-tool="password-generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 data-i18n="passwordGenerator">Password Generator</h3>
+                    <p data-i18n="passwordGeneratorDesc">Generate secure passwords</p>
+                </div>
+                
+                <div class="tool-card" data-tool="base64-encoder">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 data-i18n="base64Encoder">Base64 Encoder/Decoder</h3>
+                    <p data-i18n="base64EncoderDesc">Encode and decode Base64 strings</p>
+                </div>
+                
+                <div class="tool-card" data-tool="url-tools">
+                    <div class="tool-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 data-i18n="urlTools">URL Tools</h3>
+                    <p data-i18n="urlToolsDesc">Shorten and expand URLs</p>
+                </div>
+                
+                <div class="tool-card" data-tool="json-formatter">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3 data-i18n="jsonFormatter">JSON Formatter</h3>
+                    <p data-i18n="jsonFormatterDesc">Format and validate JSON</p>
+                </div>
+                
+                <div class="tool-card" data-tool="unit-converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 data-i18n="unitConverter">Unit Converter</h3>
+                    <p data-i18n="unitConverterDesc">Convert between different units</p>
+                </div>
+                
+                <div class="tool-card" data-tool="random-generator">
+                    <div class="tool-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3 data-i18n="randomGenerator">Random Number Generator</h3>
+                    <p data-i18n="randomGeneratorDesc">Generate random numbers</p>
+                </div>
+                
+                <div class="tool-card" data-tool="timestamp-converter">
+                    <div class="tool-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 data-i18n="timestampConverter">Timestamp Converter</h3>
+                    <p data-i18n="timestampConverterDesc">Convert timestamps and dates</p>
                 </div>
             </div>
         </div>
 
-        <div class="controls">
-            <button id="newGameBtn" class="btn btn-primary">
-                <i class="fas fa-play"></i>
-                <span data-i18n="newGame">New Game</span>
-            </button>
-            <button id="resetBtn" class="btn btn-secondary">
-                <i class="fas fa-redo"></i>
-                <span data-i18n="resetGame">Reset</span>
-            </button>
-            <button id="hintBtn" class="btn btn-info">
-                <i class="fas fa-lightbulb"></i>
-                <span data-i18n="hint">Hint</span>
-            </button>
-            <button id="undoBtn" class="btn btn-warning">
-                <i class="fas fa-undo"></i>
-                <span data-i18n="undo">Undo</span>
-            </button>
-        </div>
-
-        <div id="statusMessage" class="status-message"></div>
-
-        <div class="instructions-card">
-            <h3 data-i18n="instructions">Instructions</h3>
-            <p data-i18n="instructionsText">Move all disks from the left peg to the right peg. You can only move one disk at a time and never place a larger disk on top of a smaller one.</p>
-        </div>
-
-        <div id="winModal" class="modal">
+        <!-- Tool Modal -->
+        <div id="toolModal" class="modal">
             <div class="modal-content">
-                <h2 data-i18n="congratulations">Congratulations!</h2>
-                <p id="winText"></p>
-                <button id="playAgainBtn" class="btn btn-primary" data-i18n="newGame">New Game</button>
+                <div class="modal-header">
+                    <h2 id="modalTitle">Tool</h2>
+                    <button id="closeModal" class="btn btn-close">&times;</button>
+                </div>
+                <div id="modalBody" class="modal-body">
+                    <!-- Tool content will be dynamically loaded here -->
+                </div>
             </div>
         </div>
     </div>
 
     <div id="footer-container"></div>
 
-    <script src="assets/js/game.js"></script>
+    <script src="assets/js/tools.js"></script>
 </body>
 </html>
